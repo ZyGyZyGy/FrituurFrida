@@ -20,7 +20,7 @@ public class IndexServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<!doctype html>");
 		out.println("<html lang='nl'><head>");
-		out.println("<title>Pizza Luigi</title></head>");
+		out.println("<title>Frituur Frida</title></head>");
 		out.println("<body><h1>");
 		DayOfWeek dag = LocalDate.now().getDayOfWeek();
 		out.print(dag == DayOfWeek.MONDAY || dag == DayOfWeek.THURSDAY ? "Vandaag zijn we gesloten"
