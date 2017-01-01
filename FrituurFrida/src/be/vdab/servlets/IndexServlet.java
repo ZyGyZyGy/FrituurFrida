@@ -12,15 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/index.htm")
 public class IndexServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	private static final String VIEW = "/WEB-INF/JSP/index.jsp";
+    private static final long serialVersionUID = 1L;
+    private static final String VIEW = "/WEB-INF/JSP/index.jsp";
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		DayOfWeek dag = LocalDateTime.now().getDayOfWeek();
-		request.setAttribute("openGesloten", dag == DayOfWeek.MONDAY || dag == DayOfWeek.THURSDAY
-				? "gesloten" : "open");
-		request.getRequestDispatcher(VIEW).forward(request, response);
-	}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	    throws ServletException, IOException {
+	DayOfWeek dag = LocalDateTime.now().getDayOfWeek();
+	request.setAttribute("openGesloten",
+		dag == DayOfWeek.MONDAY || dag == DayOfWeek.THURSDAY ? "gesloten" : "open");
+	request.getRequestDispatcher(VIEW).forward(request, response);
+    }
 
 }
