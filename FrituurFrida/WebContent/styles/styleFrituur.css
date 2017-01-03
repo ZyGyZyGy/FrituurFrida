@@ -10,3 +10,42 @@ body {
 h1 {
 	color: darkred;
 }
+
+nav ul {
+	background-color: red;
+	padding: 0.4em 0;
+}
+
+nav li {
+	display: inline;
+}
+
+nav li a {
+	color: white;
+	font-weight: bold;
+	padding-left: 0.5em;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+nav li a:hover {
+	color: #F7FFCC;
+}
+
+/*------------------------------------ Lijst sauzen ------------------------------------*/
+.sausAfbeelding {
+	float: left;
+	margin-right: 10px;
+}
+
+.saus {
+	border: 3px solid black;
+	border-radius: 1em;
+	background-color: white;
+}
+
+li {
+	padding: 10px;
+	vertical-align: text-top;
+	list-style: none;
+}
