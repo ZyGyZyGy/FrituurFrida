@@ -10,6 +10,10 @@
 <body>
 	<h1>Vandaag zijn we ${openGesloten}</h1>
 	<img src="images/${openGesloten}.png" alt="${openGesloten}" width="599"
-		height="202">
+		height="202"
+	>
+	<footer>${adres.straat} ${adres.huisNr}<br>
+			${adres.gemeente.postCode} ${adres.gemeente.naam}
+	</footer>
 </body>
 </html>

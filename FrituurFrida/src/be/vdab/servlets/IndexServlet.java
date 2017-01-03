@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import be.vdab.entities.Adres;
+import be.vdab.entities.Gemeente;
+
 @WebServlet("/index.htm")
 public class IndexServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -20,6 +23,7 @@ public class IndexServlet extends HttpServlet {
 	DayOfWeek dag = LocalDateTime.now().getDayOfWeek();
 	request.setAttribute("openGesloten",
 		dag == DayOfWeek.MONDAY || dag == DayOfWeek.THURSDAY ? "gesloten" : "open");
+	request.setAttribute("adres", new Adres("Frietenstraat", "25", new Gemeente("Brugge", 8200)));
 	request.getRequestDispatcher(VIEW).forward(request, response);
     }
 
