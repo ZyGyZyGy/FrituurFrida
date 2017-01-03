@@ -18,6 +18,9 @@
 			${adres.straat} ${adres.huisNr}<br> 
 			${adres.gemeente.postCode} ${adres.gemeente.naam}
 		</p>
+		<p>
+			Telefoonnummer helpdesk: <a href="${telNr}">${telNr}</a>
+		</p>
 	</footer>
 </body>
 </html>
