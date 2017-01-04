@@ -1,15 +1,18 @@
 package be.vdab.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Saus {
 
     private long nummer;
     private String naam;
-    private String[] ingredienten;
+    private List<String> ingredienten = new ArrayList<>();
 
-    public Saus(long nummer, String naam, String[] ingredienten) {
+    public Saus(long nummer, String naam, List<String> ingredienten) {
 	this.nummer = nummer;
 	this.naam = naam;
-	this.ingredienten = ingredienten;
+	this.ingredienten.addAll(ingredienten);
     }
 
     public long getNummer() {
@@ -28,12 +31,12 @@ public class Saus {
 	this.naam = naam;
     }
 
-    public String[] getIngredienten() {
+    public List<String> getIngredienten() {
 	return ingredienten;
     }
 
-    public void setIngredienten(String[] ingredienten) {
-	this.ingredienten = ingredienten;
+    public void addIngredienten(String ingredient) {
+	ingredienten.add(ingredient);
     }
 
 }

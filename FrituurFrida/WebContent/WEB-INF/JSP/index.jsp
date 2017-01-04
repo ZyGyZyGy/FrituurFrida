@@ -15,8 +15,8 @@
 	>
 	<footer>
 		<p>
-			${adres.straat} ${adres.huisNr}<br> 
-			${adres.gemeente.postCode} ${adres.gemeente.naam}
+			${adres.straat}&nbsp;${adres.huisNr}<br> 
+			${adres.gemeente.postCode}&nbsp;${adres.gemeente.naam}
 		</p>
 		<p>
 			Telefoonnummer helpdesk: <a href="${initParam.telNr}">${initParam.telNr}</a>
