@@ -26,6 +26,7 @@ public class IndexServlet extends HttpServlet {
 		dag == DayOfWeek.MONDAY || dag == DayOfWeek.THURSDAY ? "gesloten" : "open");
 	request.setAttribute("adres", new Adres("Frietenstraat", "25", new Gemeente("Brugge", 8200)));
 	request.getRequestDispatcher(VIEW).forward(request, response);
+	
     }
 
 }
