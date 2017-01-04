@@ -20,7 +20,7 @@ public class IndexServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
-	request.setAttribute("telNr", this.getInitParameter("telNr"));
+	request.setAttribute("telNr", this.getServletContext().getInitParameter("telNr"));
 	DayOfWeek dag = LocalDateTime.now().getDayOfWeek();
 	request.setAttribute("openGesloten",
 		dag == DayOfWeek.MONDAY || dag == DayOfWeek.THURSDAY ? "gesloten" : "open");
