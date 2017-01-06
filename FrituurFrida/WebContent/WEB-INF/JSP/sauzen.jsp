@@ -11,7 +11,7 @@
 	<c:import url="/WEB-INF/JSP/menu.jsp"></c:import>
 	<ul class="saus">
 		<c:forEach var="saus" items="${sauzen}">
-			<li><img src="images/${saus.naam}.png" alt="${saus.naam}"><strong>${saus.naam}:</strong>
+			<li><img src=" <c:url value='images/${saus.naam}.png' /> " alt="${saus.naam}"><strong>${saus.naam}:</strong>
 				<c:forEach var="ingredient" items="${saus.ingredienten}" varStatus="status">${ingredient}  
  					<c:if test="${!status.last}">, </c:if>
 				</c:forEach>
