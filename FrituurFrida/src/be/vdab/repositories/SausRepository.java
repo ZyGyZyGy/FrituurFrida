@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
@@ -50,4 +51,30 @@ public class SausRepository {
 	return saus == null ? Optional.empty() : Optional.of(saus);
     }
     
+    public void delete(Set<Long> idStream) {
+	idStream.stream().forEach(id -> SAUZEN.remove(id));
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

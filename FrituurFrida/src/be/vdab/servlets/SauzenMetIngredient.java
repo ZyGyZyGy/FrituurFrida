@@ -19,21 +19,6 @@ public class SauzenMetIngredient extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
-//	if (request.getQueryString() != null) {
-//	    Map<String, String> fouten = new HashMap<>();
-//	    String ingredient = null;
-//	    try {
-//		ingredient = request.getParameter("ingredient");
-//	    } catch (Exception e) {
-//		fouten.put("ingredient", "tik een ingredient");
-//	    }
-//	    if (fouten.isEmpty()) {
-//		request.setAttribute("sauzen", sausRepository.findByIngredient(ingredient));
-//	    } else {
-//		request.setAttribute("fouten", fouten);
-//	    }
-//	}
-	
 	String ingredient = request.getParameter("ingredient");
 	if (ingredient != null) {
 	    if (ingredient.isEmpty()) {
