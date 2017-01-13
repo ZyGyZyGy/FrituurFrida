@@ -1,5 +1,5 @@
 package be.vdab.entities;
-
+// test
 public class Adres {
 
     private String straat, huisNr;
