@@ -1,8 +1,6 @@
 package be.vdab.servlets;
 
 import java.io.IOException;
-import java.util.Collections;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,25 +17,10 @@ public class SauzenMetIngredient extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
-//	if (request.getQueryString() != null) {
-//	    Map<String, String> fouten = new HashMap<>();
-//	    String ingredient = null;
-//	    try {
-//		ingredient = request.getParameter("ingredient");
-//	    } catch (Exception e) {
-//		fouten.put("ingredient", "tik een ingredient");
-//	    }
-//	    if (fouten.isEmpty()) {
-//		request.setAttribute("sauzen", sausRepository.findByIngredient(ingredient));
-//	    } else {
-//		request.setAttribute("fouten", fouten);
-//	    }
-//	}
-	
 	String ingredient = request.getParameter("ingredient");
 	if (ingredient != null) {
 	    if (ingredient.isEmpty()) {
-		request.setAttribute("fouten", Collections.singletonMap("ingredient", "verplicht"));
+		request.setAttribute("fouten", "ingredient verplicht in te vullen");
 	    } else {
 		request.setAttribute("sauzen", sausRepository.findByIngredient(ingredient));
 	    }
