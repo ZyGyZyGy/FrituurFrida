@@ -20,7 +20,7 @@ public class SauzenMetIngredient extends HttpServlet {
 	String ingredient = request.getParameter("ingredient");
 	if (ingredient != null) {
 	    if (ingredient.isEmpty()) {
-		request.setAttribute("fouten", "ingredient verplicht in te vullen");
+		request.setAttribute("fouten", "Ingredient verplicht in te vullen");
 	    } else {
 		request.setAttribute("sauzen", sausRepository.findByIngredient(ingredient));
 	    }
