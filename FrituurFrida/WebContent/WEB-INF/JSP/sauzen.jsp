@@ -26,7 +26,13 @@
 		<label>
 			<input type="submit" value="Aangevinkte sauzen verwijderen" id="verwijderKnop">
 		</label>
+		<div>${fout}</div>
 	</form>
+	<script>
+		document.getElementById('toevoegform').onsubmit = function() {
+			document.getElementById('toevoegknop').disabled = true;
+		};
+	</script>
 </body>
 </html>
 
