@@ -1,6 +1,7 @@
 package be.vdab.entities;
 // test
 // test2
+// test3
 public class Adres {
 
     private String straat, huisNr;
