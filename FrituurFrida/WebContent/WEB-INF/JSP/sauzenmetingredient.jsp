@@ -29,7 +29,7 @@
 		</ul>
 	</c:if>
 	<c:if test="${not empty param and empty fouten and empty sauzen}">
-		<div class="fout">Geen sauzen gevonden</div>
+		<div class="fout">Geen sauzen gevonden</div> 
 	</c:if>
 </body>
 </html>
