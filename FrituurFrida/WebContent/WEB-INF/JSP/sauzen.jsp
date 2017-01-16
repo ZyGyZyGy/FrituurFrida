@@ -9,14 +9,14 @@
 </head>
 <body>
 	<c:import url="/WEB-INF/JSP/menu.jsp"></c:import>
-	 <form method='post' action="<c:url value="/sauzen/verwijderen.htm"/>"> 
+	 <form id="verwijderForm" method='post' action="<c:url value="/sauzen/verwijderen.htm"/>"> 
 		<ul class="saus">
 			<c:forEach var="saus" items="${sauzen}">
 				<li>
 				<label>
 				<input type="checkbox" name="id" value="${saus.nummer}">
 				</label>
-				<img src=" <c:url value='images/${saus.naam}.png' /> " alt="${saus.naam}"><strong>${saus.naam}:</strong> 
+				<img src=" <c:url value='/images/${saus.naam}.png' /> " alt="${saus.naam}"><strong>${saus.naam}:</strong> 
 					<c:forEach var="ingredient" items="${saus.ingredienten}" varStatus="status">${ingredient}  
  						<c:if test="${!status.last}">, </c:if>
 					</c:forEach>
@@ -29,8 +29,8 @@
 		<div>${fout}</div>
 	</form>
 	<script>
-		document.getElementById('toevoegform').onsubmit = function() {
-			document.getElementById('toevoegknop').disabled = true;
+		document.getElementById('verwijderForm').onsubmit = function() {
+			document.getElementById('verwijderKnop').disabled = true;
 		};
 	</script>
 </body>

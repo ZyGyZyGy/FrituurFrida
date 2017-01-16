@@ -39,7 +39,12 @@ public class SauzenVerwijderenServlet extends HttpServlet {
 		    .collect(Collectors.toSet())
 		    );
 	    response.sendRedirect(String.format(REDIRECT_URL, request.getContextPath()));
-	} 
+	} else {
+	    request.setAttribute("sauzen", sausRepository.findAll());
+	    request.setAttribute("fout", "niets geselecteerd");
+		request.getRequestDispatcher(VIEW).forward(request, response);
+	}
+	
     }
 
 }
