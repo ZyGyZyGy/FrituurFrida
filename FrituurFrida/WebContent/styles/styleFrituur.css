@@ -7,10 +7,6 @@ body {
 	font-family: sans-serif;
 }
 
-h1 {
-	color: darkred;
-}
-
 nav ul {
 	background-color: red;
 	padding: 0.4em 0;
@@ -30,6 +26,16 @@ nav li a {
 
 nav li a:hover {
 	color: #F7FFCC;
+}
+
+.jongens {
+	background-color: lightblue;
+	color: blue;
+}
+
+.meisjes {
+	background-color: pink;
+	color: red;
 }
 
 /*------------------------------------ Lijst sauzen ------------------------------------*/

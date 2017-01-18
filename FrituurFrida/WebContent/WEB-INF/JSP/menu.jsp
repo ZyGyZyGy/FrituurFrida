@@ -6,6 +6,7 @@
 			<li><a href='<c:url value="/"></c:url>'>Welkom</a></li>
 			<li><a href='<c:url value="/sauzen.htm"></c:url>'>Sauzen</a></li>
 			<li><a href='<c:url value="/sauzen/metingredient.htm"></c:url>'>Sauzen met ingredi&euml;nt</a></li>
+			<li><a href='<c:url value="/meisjesjongens.htm"></c:url>'>Meisjes jongens</a></li>
 		</ul>
 	</nav>
 </header>
