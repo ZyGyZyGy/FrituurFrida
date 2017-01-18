@@ -2,10 +2,7 @@ package be.vdab.servlets;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.LinkedHashSet;
-import java.util.Set;
 import java.util.stream.Collectors;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,7 +39,7 @@ public class SauzenVerwijderenServlet extends HttpServlet {
 	} else {
 	    request.setAttribute("sauzen", sausRepository.findAll());
 	    request.setAttribute("fout", "niets geselecteerd");
-		request.getRequestDispatcher(VIEW).forward(request, response);
+	    request.getRequestDispatcher(VIEW).forward(request, response);
 	}
 	
     }
