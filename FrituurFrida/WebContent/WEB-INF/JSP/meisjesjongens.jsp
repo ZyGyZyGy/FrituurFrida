@@ -14,8 +14,5 @@
 		<input type="submit" name="meisjesjongens" value="meisjes"> <input
 			type="submit" name="meisjesjongens" value="jongens">
 	</form>
-	<p>
-		U hebt op <b>${geslacht}</b> geklikt
-	</p>
 </body>
 </html>
