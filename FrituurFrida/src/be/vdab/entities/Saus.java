@@ -8,6 +8,7 @@ public class Saus {
     private long nummer;
     private String naam;
     private List<String> ingredienten = new ArrayList<>();
+    private char[] tekens;
 
     public Saus(long nummer, String naam, List<String> ingredienten) {
 	this.nummer = nummer;
@@ -38,5 +39,8 @@ public class Saus {
     public void addIngredienten(String ingredient) {
 	ingredienten.add(ingredient);
     }
-
+    
+    public char[] getTekens() {
+	return naam.toCharArray();
+    }
 }

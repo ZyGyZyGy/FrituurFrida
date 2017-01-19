@@ -5,7 +5,7 @@
     <param-value>+324987654321</param-value>
   </context-param>
   <session-config>
-  	<session-timeout>20</session-timeout>
-  	<tracking-mode>COOKIE</tracking-mode>
+    <session-timeout>20</session-timeout>
+    <tracking-mode>COOKIE</tracking-mode>
   </session-config>
 </web-app>

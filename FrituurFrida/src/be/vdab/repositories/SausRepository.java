@@ -55,6 +55,10 @@ public class SausRepository {
 	idStream.stream().forEach(id -> SAUZEN.remove(id));
     }
     
+    public int size() {
+	return SAUZEN.size();
+    }
+    
 }
 
 
