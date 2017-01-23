@@ -1,26 +1,53 @@
 package be.vdab.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import be.vdab.repositories.SausRepository;
+import java.util.stream.IntStream;
 
 public class SausRadenSpel implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    private static final SausRepository sausRepository = new SausRepository();
-    private final Saus saus;
-
-    public SausRadenSpel() {
-	int indexSaus = new Random().nextInt(sausRepository.size());
-	List<Saus> sauzenLijst = new ArrayList<>(sausRepository.findAll());
-	saus = sauzenLijst.get(indexSaus);
-    }
-
-    public Saus getSaus() {
-        return saus;
-    }
+    private static final long serialVersionUID = 1L; 
+    private static final int MAX_BEURTEN = 10; 
+    private final String saus; 
+    private final StringBuilder sausMetPuntjes; 
+    private int verkeerdeBeurten; 
+    
+    public SausRadenSpel(String saus) { 
+      this.saus = saus; 
+      sausMetPuntjes = new StringBuilder(saus.length()); 
+     IntStream.rangeClosed(1, saus.length()) 
+      .forEach(teller -> sausMetPuntjes.append('.')); 
+    } 
+    
+    public void doeGok(char letter) { 
+      int letterIndex = saus.indexOf(letter); 
+      if (letterIndex == -1) { 
+        verkeerdeBeurten++; 
+      } else { 
+        do { 
+          sausMetPuntjes.setCharAt(letterIndex, letter); 
+          letterIndex = saus.indexOf(letter, letterIndex + 1); 
+        } while (letterIndex != -1); 
+      } 
+    } 
+    
+    public String getSausMetPuntjes() { 
+      return sausMetPuntjes.toString(); 
+    } 
+    
+    public String getSaus() { 
+      return saus; 
+    } 
+    
+    public int getVerkeerdeBeurten() { 
+      return verkeerdeBeurten; 
+    } 
+    
+    public boolean isGewonnen() { 
+      return sausMetPuntjes.indexOf(".") == -1; 
+    } 
+    
+    public boolean isVerloren() { 
+      return verkeerdeBeurten == MAX_BEURTEN; 
+    } 
     
 }
