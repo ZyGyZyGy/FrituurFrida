@@ -35,7 +35,7 @@ public class Saus {
 	return ingredienten;
     }
 
-    public void addIngredienten(String ingredient) {
+    public void addIngredient(String ingredient) {
 	ingredienten.add(ingredient);
     }
     

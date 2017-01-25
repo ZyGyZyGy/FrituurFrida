@@ -3,11 +3,14 @@ package be.vdab.servlets;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.stream.Collectors;
+
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 
 import be.vdab.repositories.SausRepository;
 
@@ -18,6 +21,11 @@ public class SauzenVerwijderenServlet extends HttpServlet {
     private static final String REDIRECT_URL = "%s/sauzen.htm";
     private final SausRepository sausRepository = new SausRepository();
 
+    @Resource(name = SausRepository.JNDI_NAME) 
+    public void setDataSource(DataSource dataSource) { 
+      sausRepository.setDataSource(dataSource); 
+    }
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
@@ -30,9 +38,7 @@ public class SauzenVerwijderenServlet extends HttpServlet {
 	if (request.getParameterValues("id") != null) {
 	    sausRepository.delete(
 		    Arrays.stream(request.getParameterValues("id"))
-		    .map(id -> sausRepository.read(Long.parseLong(id)))
-		    .filter(optionalId -> optionalId.isPresent())
-		    .map(optionalId -> optionalId.get().getNummer())
+		    .map(id -> Long.parseLong(id))
 		    .collect(Collectors.toSet())
 		    );
 	    response.sendRedirect(String.format(REDIRECT_URL, request.getContextPath()));
