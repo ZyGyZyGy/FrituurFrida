@@ -1,6 +1,7 @@
 <%@page contentType='text/html' pageEncoding='UTF-8' trimDirectiveWhitespaces ='true'%>
 <%@taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core'%>
-<%@taglib prefix='fmt' uri='http://java.sun.com/jsp/jstl/fmt'%> 
+<%@taglib prefix='fmt' uri='http://java.sun.com/jsp/jstl/fmt'%>
+<%@taglib prefix='vdab' uri='http://vdab.be/tags'%>  
 <fmt:setBundle basename='resourceBundles.teksten'/> 
 <!doctype html>
 <html lang="nl">
@@ -11,7 +12,7 @@
 </c:import>
 </head>
 <body>
-	<c:import url="/WEB-INF/JSP/menu.jsp"></c:import>
+	<vdab:menu/>
 	<h1><fmt:message key="vandaagZijnWe${openGesloten}"/></h1>
 	<fmt:message key="afbeelding${openGesloten}" var="afbeelding"/>
 	 <img src='<c:url value="/images/${afbeelding}"/>' alt="<fmt:message key='${openGesloten}'/>"> 
