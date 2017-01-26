@@ -70,16 +70,23 @@ li {
 	color: white;
 }
 
-
 /*------------------------------------ fout ------------------------------------*/
-
-
 .foutLeeg {
 	font-size: 12px;
 	color: red;
 }
 
 /*------------------------------------ Input ------------------------------------*/
+input, textarea {
+	display: block;
+	margin-top: 0.2em;
+	margin-bottom: 1em;
+	font-size: 1.1em;
+}
+
+input:focus, textarea:focus, select:focus {
+	background-color: #FFFFD6
+}
 
 #verwijderKnop {
 	font-size: 16px;
@@ -91,11 +98,6 @@ td:last-child {
 	text-align: right;
 }
 
-
-
-
-
-
-
-
-
+dd {
+	font-weight: bold;
+}
